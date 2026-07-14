@@ -10,73 +10,328 @@
 <body>
 
 <!-- NAV -->
-<nav class="navbar"><div class="nav-inner"><a href="#home" class="nav-logo"><img alt="Healing Hand Network" src="/Images/Logo.jpeg"></a><ul class="nav-links"><li><a href="#about">About Us</a></li><li><a href="#programs">Programs</a></li><li><a href="#involved">Get Involved</a></li><li><a href="#register">Register</a></li><li><a href="#contact">Contact</a></li><li><a href="#register" class="nav-cta">Join Now</a></li></ul><button class="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button></div></nav>
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <!-- Logo Section -->
+    <a href="#home" class="nav-logo">
+      <img alt="Nursing Connect Africa" src="Images/Nursing_Connect _Africa.png" class="logo-img">
+     </a>
+
+    <!-- Desktop Navigation -->
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li class="dropdown-item">
+        <a href="#about" class="dropdown-toggle">About <span class="dropdown-arrow">▼</span></a>
+        <div class="dropdown-menu">
+          <a href="#about" class="dropdown-link">About Us</a>
+          <a href="#vision" class="dropdown-link">Vision & Mission</a>
+          <a href="#governance" class="dropdown-link">Governance</a>
+          <a href="#rollout" class="dropdown-link">Rollout Plan</a>
+        </div>
+      </li>
+      <li class="dropdown-item">
+        <a href="#programs" class="dropdown-toggle">Programmes <span class="dropdown-arrow">▼</span></a>
+        <div class="dropdown-menu">
+          <a href="#programs" class="dropdown-link">Healing Hand Network</a>
+          <a href="#programs" class="dropdown-link">Professional Development</a>
+          <a href="#programs" class="dropdown-link">Advocacy & Welfare</a>
+          <a href="#programs" class="dropdown-link">Community Health Impact</a>
+        </div>
+      </li>
+      <li><a href="#membership">Membership</a></li>
+      <li class="dropdown-item">
+        <a href="#get-involved" class="dropdown-toggle">Get Involved <span class="dropdown-arrow">▼</span></a>
+        <div class="dropdown-menu">
+          <a href="#partnerships" class="dropdown-link">Partners</a>
+          <a href="#get-involved" class="dropdown-link">Volunteer</a>
+        </div>
+      </li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <!-- CTA Button -->
+    <a href="#register" class="nav-cta-btn">Join</a>
+
+    <!-- Hamburger Menu -->
+    <button class="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#about" onclick="toggleMenu()">About Us</a>
-  <a href="#programs" onclick="toggleMenu()">Programs</a>
-  <a href="#get-involved" onclick="toggleMenu()">Get Involved</a>
-  <a href="#register" onclick="toggleMenu()">Register</a>
+  <a href="#home" onclick="toggleMenu()">Home</a>
+  <a href="#about" class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(event)">About ▼</a>
+  <div class="mobile-dropdown-menu" id="mobileDropdown">
+    <a href="#about" onclick="toggleMenu()" class="mobile-dropdown-link">About Us</a>
+    <a href="#vision" onclick="toggleMenu()" class="mobile-dropdown-link">Vision & Mission</a>
+    <a href="#governance" onclick="toggleMenu()" class="mobile-dropdown-link">Governance</a>
+    <a href="#rollout" onclick="toggleMenu()" class="mobile-dropdown-link">Rollout Plan</a>
+  </div>
+  <a href="#programs" class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(event)">Programmes ▼</a>
+  <div class="mobile-dropdown-menu" id="mobileDropdown2">
+    <a href="#programs" onclick="toggleMenu()" class="mobile-dropdown-link">Healing Hand Network</a>
+    <a href="#programs" onclick="toggleMenu()" class="mobile-dropdown-link">Professional Development</a>
+    <a href="#programs" onclick="toggleMenu()" class="mobile-dropdown-link">Advocacy & Welfare</a>
+    <a href="#programs" onclick="toggleMenu()" class="mobile-dropdown-link">Community Health Impact</a>
+  </div>
+  <a href="#membership" onclick="toggleMenu()">Membership</a>
+  <a href="#get-involved" class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(event)">Get Involved ▼</a>
+  <div class="mobile-dropdown-menu" id="mobileDropdown3">
+    <a href="#partnerships" onclick="toggleMenu()" class="mobile-dropdown-link">Partners</a>
+    <a href="#get-involved" onclick="toggleMenu()" class="mobile-dropdown-link">Volunteer</a>
+  </div>
   <a href="#contact" onclick="toggleMenu()">Contact</a>
-  <a href="#register" class="btn-join" onclick="toggleMenu()">Join Now</a>
+  <a href="#register" class="mobile-cta-btn" onclick="toggleMenu()">Join</a>
 </div>
 
 <!-- HERO -->
 <section id="home">
   <div class="hero-inner">
     <div class="hero-left">
-      <div class="hero-badge"><span class="icon-inline" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M17 3h-3.2a2 2 0 0 0-3.6 0H7a2 2 0 0 0-2 2v15a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zM9 4.5h6V6H9V4.5zm8 16H7V6h2v1h6V6h2v14z"/></svg></span>EST. JULY 2025 · ENTERPRISE NO. 2026/021363</div>
-      <h1 class="hero-title">Uniting Nurses,<br><span>Supporting<br>Caregivers</span></h1>
-      <p class="hero-desc">Healing Hand Network is for all nurses — young and old, from every category — working together to care, support, and empower our community. No nurse suffers alone.</p>
+      <!-- Badge -->
+      <div class="hero-badge">
+        <span class="icon-inline" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M17 3h-3.2a2 2 0 0 0-3.6 0H7a2 2 0 0 0-2 2v15a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zM9 4.5h6V6H9V4.5zm8 16H7V6h2v1h6V6h2v14z"/></svg></span>
+        🇿🇦 Registered Non-Profit Company (NPC)
+      </div>
+
+      <!-- Main Heading -->
+      <h1 class="hero-title">Uniting Nurses.<br>Supporting Caregivers.<br><span>Empowering Communities.</span></h1>
+
+      <!-- Supporting Text -->
+      <p class="hero-desc">Nursing Connect Africa is a pan-African professional network dedicated to empowering nurses through professional development, advocacy, mutual support, and community health initiatives.</p>
+
+      <!-- CTA Buttons -->
       <div class="hero-btns">
-        <a href="#register" class="btn-primary">+ Join the Network</a>
-        <a href="#programs" class="btn-outline-white">Our Programs</a>
-        <a href="#contact" class="btn-gold-outline">Donate</a>
+        <a href="#register" class="btn-primary">Become a Member</a>
+        <a href="#programs" class="btn-outline-white">Explore Our Programmes</a>
+      </div>
+
+      <!-- Key Highlights -->
+      <div class="hero-highlights">
+        <div class="highlight-item">
+          <span class="highlight-checkmark">✓</span>
+          <span class="highlight-text">Pan-African Network</span>
+        </div>
+        <div class="highlight-item">
+          <span class="highlight-checkmark">✓</span>
+          <span class="highlight-text">Professional Development</span>
+        </div>
+        <div class="highlight-item">
+          <span class="highlight-checkmark">✓</span>
+          <span class="highlight-text">Community Impact</span>
+        </div>
+        <div class="highlight-item">
+          <span class="highlight-checkmark">✓</span>
+          <span class="highlight-text">Healing Hand Network</span>
+        </div>
       </div>
     </div>
-    <div class="hero-panel">
-      <div class="hero-logo-card"><img alt="Healing Hand Network Logo" src="/Images/Logo.jpeg"><div class="tagline"><strong>Healing Hand Network</strong>A united nursing community where every nurse is supported, empowered, and visible.</div></div>
-      <div class="hero-stats">
-        <div class="stat-card"><div class="stat-icon stat-icon--medical"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4Zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4Z" fill="currentColor"/></svg></div><div class="stat-label">All</div><div class="stat-sub">Nursing Categories</div></div>
-        <div class="stat-card"><div class="stat-icon stat-icon--heart"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 21s-6.5-4.35-9.07-7.29C1.83 11.74 1 9.75 1 8.13 1 5.24 3.24 3 6.13 3c1.39 0 2.72.56 3.73 1.57L12 6.7l2.14-2.13C14.15 3.56 15.48 3 16.87 3 19.76 3 22 5.24 22 8.13c0 1.62-.83 3.61-1.93 5.58C18.5 16.65 12 21 12 21Z" fill="currentColor"/></svg></div><div class="stat-label">Unity</div><div class="stat-sub">Same Uniform</div></div>
-        <div class="stat-card"><div class="stat-icon stat-icon--shield"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 22h16V8H4v14Zm2-12h12v10H6V10Zm6-6l6 6H6l6-6Zm-6 8h12v2H6v-2Z" fill="currentColor"/></svg></div><div class="stat-label">NPC</div><div class="stat-sub">Non-Profit Company</div></div>
-        <div class="stat-card"><div class="stat-icon stat-icon--leaf"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 11 7 11s7-5.75 7-11c0-3.87-3.13-7-7-7Zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5 14.5 7.62 14.5 9 13.38 11.5 12 11.5Z" fill="currentColor"/></svg></div><div class="stat-label">2025</div><div class="stat-sub">Founded</div></div>
+
+    <!-- Right Side - Logo Display -->
+    <div class="hero-right">
+      <div class="hero-logo-display">
+        <img alt="Nursing Connect Africa Logo" src="Images/Nursing_Connect _Africa.png" class="hero-logo-img">
       </div>
     </div>
+  </div>
+
+  <!-- Scroll Indicator -->
+  <div class="scroll-indicator">
+    <div class="scroll-text">↓ Discover More</div>
   </div>
 </section>
 
 <!-- ABOUT -->
 <section id="about">
   <div class="container">
-    <div class="section-tag">About Us</div>
-    <h2 class="section-title">Built by Nurses, for Nurses</h2>
-    <p style="color:var(--text-muted);font-size:0.97rem;max-width:520px;line-height:1.7;margin-bottom:2.5rem;">We understand the unique challenges nurses face — because we are nurses. Our network exists to ensure no nurse walks alone.</p>
-    <div class="about-grid">
-      <div class="about-story">
-        <div class="section-tag" style="background:var(--gold);color:var(--text-dark);">OUR STORY</div>
-        <h3>How Healing Hand Network Began</h3>
-        <p>Founded in July 2025 by a dedicated group of nurses, Healing Hand Network was created to address the unique challenges nurses face every day. Our goal is to ensure no nurse suffers alone — whether from illness, financial hardship, stress, or lack of support.</p>
-        <p>We welcome all nurses, regardless of category or age, to join us in creating a stronger, united community. By wearing the same uniform, we create visibility and solidarity in our communities — showing that nurses stand together.</p>
-        <div class="enterprise-badge"><span class="icon-inline" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M6 2h9l5 5v15H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm9 1.5V7h4.5L15 3.5zM8 12h8v1H8v-1zm0 3h8v1H8v-1zm0-6h5v1H8V9z"/></svg></span>Registered Non-Profit Company (NPC) · Enterprise No. 2026/021363</div>
+    <!-- Section Header -->
+    <div class="about-header">
+      <div class="section-tag">About Nursing Connect Africa</div>
+      <h1 class="section-hero">Empowering Nurses.<br>Strengthening Healthcare.<br>Transforming Communities.</h1>
+    </div>
+
+    <!-- Introduction -->
+    <div class="about-intro">
+      <p class="intro-text">Nursing Connect Africa (NCA) is a pan-African Non-Profit Company (NPC) committed to uniting, empowering, and advancing nurses across Africa. We provide professional development, advocacy, mutual support, leadership opportunities, and community health initiatives that strengthen both the nursing profession and the communities it serves.</p>
+    </div>
+
+    <!-- Why We Exist -->
+    <div class="why-exist">
+      <h2>Why We Exist</h2>
+      <p class="why-exist-text">Nurses dedicate their lives to caring for others, yet many face professional, financial, and personal challenges without adequate support. Nursing Connect Africa was founded to ensure that no nurse walks that journey alone. We are building a united network where every nurse can grow, lead, and make a lasting impact.</p>
+    </div>
+
+    <!-- Quick Facts -->
+    <div class="quick-facts">
+      <div class="fact-card">
+        <div class="fact-label">Founded</div>
+        <div class="fact-value">July 2025</div>
       </div>
-      <div class="about-right">
-        <div class="mission-card">
-          <div class="mission-icon"><span class="icon-inline" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 5C7 5 3.3 8.1 2 12c1.3 3.9 5 7 10 7s8.7-3.1 10-7c-1.3-3.9-5-7-10-7zm0 12a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm0-8a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/></svg></span></div>
-          <h4>Our Vision</h4>
-          <p>A united nursing community where every nurse is supported, empowered, and visible — working together to build a stronger future for those who dedicate their lives to caring for others.</p>
+      <div class="fact-card">
+        <div class="fact-label">Structure</div>
+        <div class="fact-value">Non-Profit Company (NPC)</div>
+      </div>
+      <div class="fact-card">
+        <div class="fact-label">Reach</div>
+        <div class="fact-value">Pan-African</div>
+      </div>
+      <div class="fact-card">
+        <div class="fact-label">Flagship Programme</div>
+        <div class="fact-value">Healing Hand Network</div>
+      </div>
+    </div>
+
+    <!-- What We Do -->
+    <div class="what-we-do">
+      <h2>What We Do</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">📚</div>
+          <h3>Professional Development</h3>
+          <p>Helping nurses build new skills through training, CPD programmes, and leadership development.</p>
         </div>
-        <div class="mission-card">
-          <div class="mission-icon"><span class="icon-inline" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 2a8 8 0 1 1 0 16 8 8 0 0 1 0-16zm0 3a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6z"/></svg></span></div>
-          <h4>Our Mission</h4>
-          <p>We are committed to making a real difference through:</p>
-          <ul>
-            <li>Subsidised funeral cover, disability support, and protection for nurses and their immediate families</li>
-            <li>Unity and visibility through the same uniform for all members</li>
-            <li>Emotional debriefing, wellness, and peer support programmes</li>
-            <li>Seminars, workshops, and professional development opportunities</li>
-          </ul>
+        <div class="feature-card">
+          <div class="feature-icon">🛡️</div>
+          <h3>Advocacy & Welfare</h3>
+          <p>Supporting nurses through advocacy, wellbeing initiatives, and representation.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🌍</div>
+          <h3>Community Impact</h3>
+          <p>Driving nurse-led outreach programmes that improve healthcare across communities.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🤝</div>
+          <h3>Healing Hand Network</h3>
+          <p>Our flagship programme providing mutual support, professional unity, and practical benefits for nurses.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Vision & Mission -->
+    <div class="vision-mission">
+      <div class="vision-box">
+        <h3>Our Vision</h3>
+        <p>A united nursing community where every nurse is supported, empowered, and visible—working together to lead sustainable healthcare transformation across Africa.</p>
+      </div>
+      <div class="mission-box">
+        <h3>Our Mission</h3>
+        <p>To provide African nurses with access to professional development, leadership opportunities, advocacy, networking, and comprehensive support systems that strengthen healthcare delivery and community wellbeing.</p>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="about-cta">
+      <h2>Join a Growing Movement</h2>
+      <p>Join a growing movement that is shaping the future of nursing across Africa.</p>
+      <div class="cta-buttons">
+        <a href="#register" class="btn-primary">Become a Member</a>
+        <a href="#programs" class="btn-outline">Explore Our Programmes</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VISION -->
+<section id="vision">
+  <div class="container">
+    <!-- Section Header -->
+    <div class="vision-header">
+      <div class="section-tag">Vision, Mission & Core Values</div>
+      <h1 class="section-hero">A Clear Purpose Rooted in Unity, Empowerment, and Care</h1>
+      <p class="intro-text">Our core purpose is to strengthen nurses both professionally and personally so that healthcare delivery improves across the continent.</p>
+    </div>
+
+    <!-- Vision -->
+    <div class="vision-section">
+      <div class="vision-card">
+        <div class="vision-icon">👁️</div>
+        <h2 class="vision-title">Our Vision</h2>
+        <p class="vision-text">A united nursing community where every nurse is supported, empowered, and visible — working together to lead sustainable healthcare transformation across Africa.</p>
+      </div>
+    </div>
+
+    <!-- Mission -->
+    <div class="mission-section">
+      <div class="mission-card">
+        <div class="mission-icon">🎯</div>
+        <h2 class="mission-title">Our Mission</h2>
+        <p class="mission-text">To provide African nurses with access to skills development, leadership growth, professional networks, advocacy platforms, income-generating opportunities, and comprehensive social support systems that strengthen healthcare delivery and community well-being.</p>
+      </div>
+    </div>
+
+    <!-- Strategic Objectives -->
+    <div class="strategic-objectives">
+      <h2 class="section-subtitle">Strategic Objectives</h2>
+      <div class="objectives-grid">
+        <div class="objective-item">
+          <span class="obj-number">01</span>
+          <p>Build a unified pan-African nursing network that transcends categories, provinces, and borders</p>
+        </div>
+        <div class="objective-item">
+          <span class="obj-number">02</span>
+          <p>Improve clinical, leadership, and entrepreneurial skills through accessible training and CPD programmes</p>
+        </div>
+        <div class="objective-item">
+          <span class="obj-number">03</span>
+          <p>Create meaningful career and income-generating opportunities for nurses at every level</p>
+        </div>
+        <div class="objective-item">
+          <span class="obj-number">04</span>
+          <p>Advocate for nurse welfare, safety, recognition, and improved working conditions</p>
+        </div>
+        <div class="objective-item">
+          <span class="obj-number">05</span>
+          <p>Provide subsidised funeral cover, disability support, and protection for nurses and their immediate families</p>
+        </div>
+        <div class="objective-item">
+          <span class="obj-number">06</span>
+          <p>Create unity and visibility through standardised branding and uniform for all members</p>
+        </div>
+        <div class="objective-item">
+          <span class="obj-number">07</span>
+          <p>Support education, seminars, and social gatherings for personal and professional growth</p>
+        </div>
+        <div class="objective-item">
+          <span class="obj-number">08</span>
+          <p>Improve community health outcomes through nurse-led initiatives and outreach programmes</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Core Values -->
+    <div class="core-values">
+      <h2 class="section-subtitle">Core Values</h2>
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-icon">🤝</div>
+          <h3 class="value-title">Unity</h3>
+          <p class="value-desc">We stand together as one nursing community, regardless of category, age, or background.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">💪</div>
+          <h3 class="value-title">Empowerment</h3>
+          <p class="value-desc">We equip nurses with the tools, skills, and confidence to lead.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">❤️</div>
+          <h3 class="value-title">Care</h3>
+          <p class="value-desc">We care for those who care for others — physically, emotionally, and financially.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">⚖️</div>
+          <h3 class="value-title">Integrity</h3>
+          <p class="value-desc">We operate with transparency, accountability, and ethical governance.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">👁️</div>
+          <h3 class="value-title">Visibility</h3>
+          <p class="value-desc">We make nurses seen, heard, and recognised in every community.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">📈</div>
+          <h3 class="value-title">Growth</h3>
+          <p class="value-desc">We champion continuous learning, professional advancement, and personal development.</p>
         </div>
       </div>
     </div>
@@ -86,53 +341,766 @@
 <!-- PROGRAMS -->
 <section id="programs">
   <div class="container">
+    <!-- Section Header -->
+    <div class="programs-header">
+      <div class="section-tag">Our Programmes</div>
+      <h1 class="section-hero">Supporting nurses through every stage of their professional journey.</h1>
+    </div>
+
+    <!-- Introduction -->
+    <div class="programs-intro">
+      <p class="intro-text">Nursing Connect Africa delivers its impact through a suite of integrated programmes designed to address the professional, financial, social, and emotional needs of nurses.</p>
+    </div>
+
+    <!-- Programme Tabs -->
+    <div class="programme-tabs">
+      <button class="tab-btn active" data-tab="healing-hand">Healing Hand Network</button>
+      <button class="tab-btn" data-tab="professional">Professional Development</button>
+      <button class="tab-btn" data-tab="advocacy">Advocacy & Welfare</button>
+      <button class="tab-btn" data-tab="community">Community Health Impact</button>
+    </div>
+
+    <!-- Tab Content -->
+    <div class="tab-content-container">
+      <!-- Healing Hand Network (Flagship) -->
+      <div class="tab-panel active" id="healing-hand">
+        <div class="flagship-header">
+          <div class="flagship-badge">Flagship Programme</div>
+          <h2 class="flagship-title">Healing Hand Network</h2>
+          <p class="flagship-desc">NCA's dedicated mutual support programme — designed for all nurses, young and old, from every category. By wearing the same uniform, we create unity and visibility in our communities.</p>
+        </div>
+
+        <div class="programme-features-grid">
+          <div class="feature-detail-card">
+            <div class="feature-icon">⚰️</div>
+            <h3 class="feature-detail-title">Funeral Cover</h3>
+            <p class="feature-detail-desc">Subsidised funeral cover for NCA members and their immediate family members. No nurse should face the burden of loss without support from their professional community.</p>
+          </div>
+          <div class="feature-detail-card">
+            <div class="feature-icon">🏥</div>
+            <h3 class="feature-detail-title">Disability & Illness Support</h3>
+            <p class="feature-detail-desc">Financial protection and support for nurses in case of injury, illness, or disability. NCA ensures members are covered when they can no longer work.</p>
+          </div>
+          <div class="feature-detail-card">
+            <div class="feature-icon">📚</div>
+            <h3 class="feature-detail-title">Education & Training</h3>
+            <p class="feature-detail-desc">Resources, bursaries, and scholarships for nurses to continue learning and growing professionally. Future goal: fully funded educational programmes for career advancement.</p>
+          </div>
+          <div class="feature-detail-card">
+            <div class="feature-icon">🎉</div>
+            <h3 class="feature-detail-title">Seminars & Social Events</h3>
+            <p class="feature-detail-desc">Regular gatherings to teach, entertain, network, and allow nurses to de-stress. Opportunities for mentoring, knowledge-sharing, and building lasting professional relationships.</p>
+          </div>
+          <div class="feature-detail-card">
+            <div class="feature-icon">👔</div>
+            <h3 class="feature-detail-title">Community Visibility & Unity</h3>
+            <p class="feature-detail-desc">A standardised NCA uniform for all members representing solidarity, strength, and professional pride. When our communities see nurses standing together, they see healthcare that cares.</p>
+          </div>
+          <div class="feature-detail-card">
+            <div class="feature-icon">💼</div>
+            <h3 class="feature-detail-title">Business & Private Practice Development</h3>
+            <p class="feature-detail-desc">Equipping nurses with business acumen, financial literacy, and practical tools to start and sustain their own private practices. From business planning to marketing and compliance.</p>
+          </div>
+          <div class="feature-detail-card">
+            <div class="feature-icon">🏆</div>
+            <h3 class="feature-detail-title">Annual Nursing Excellence Awards</h3>
+            <p class="feature-detail-desc">An annual awards ceremony celebrating nurses making outstanding impact. Categories include Community Health Champion, Nurse Entrepreneur of the Year, Mentor of the Year, and Lifetime Achievement.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Professional Development -->
+      <div class="tab-panel" id="professional">
+        <div class="programme-detail-header">
+          <h2 class="programme-detail-title">Professional Development & Training</h2>
+          <p class="programme-detail-desc">Enhancing careers through comprehensive training and development opportunities.</p>
+        </div>
+
+        <div class="programme-features-grid">
+          <div class="feature-detail-card">
+            <div class="feature-icon">📖</div>
+            <h3 class="feature-detail-title">Discounted CPD Programmes</h3>
+            <p class="feature-detail-desc">Continuing Professional Development programmes at subsidised rates for all member tiers.</p>
+          </div>
+          <div class="feature-detail-card">
+            <div class="feature-icon">🩺</div>
+            <h3 class="feature-detail-title">Clinical Skills Workshops</h3>
+            <p class="feature-detail-desc">Advanced practice training and hands-on clinical skills enhancement workshops.</p>
+          </div>
+          <div class="feature-detail-card">
+            <div class="feature-icon">👔</div>
+            <h3 class="feature-detail-title">Leadership Development</h3>
+            <p class="feature-detail-desc">Leadership and management development programmes for nurses at all career stages.</p>
+          </div>
+          <div class="feature-detail-card">
+            <div class="feature-icon">🚀</div>
+            <h3 class="feature-detail-title">Entrepreneurship Training</h3>
+            <p class="feature-detail-desc">Training for nurse-owned businesses and private practice development.</p>
+          </div>
+          <div class="feature-detail-card">
+            <div class="feature-icon">📜</div>
+            <h3 class="feature-detail-title">Professional Recognition</h3>
+            <p class="feature-detail-desc">Certificates of participation and professional recognition for completed programmes.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Advocacy & Welfare -->
+      <div class="tab-panel" id="advocacy">
+        <div class="programme-detail-header">
+          <h2 class="programme-detail-title">Advocacy & Welfare</h2>
+          <p class="programme-detail-desc">Championing nurses' rights and supporting their wellbeing.</p>
+        </div>
+
+        <div class="programme-features-grid">
+          <div class="feature-detail-card">
+            <div class="feature-icon">📢</div>
+            <h3 class="feature-detail-title">Policy Representation</h3>
+            <p class="feature-detail-desc">Representation of nurse interests at policy and regulatory level.</p>
+          </div>
+          <div class="feature-detail-card">
+            <div class="feature-icon">⚖️</div>
+            <h3 class="feature-detail-title">Working Conditions Advocacy</h3>
+            <p class="feature-detail-desc">Campaigns for improved working conditions, safety, and remuneration.</p>
+          </div>
+          <div class="feature-detail-card">
+            <div class="feature-icon">🧠</div>
+            <h3 class="feature-detail-title">Mental Health Support</h3>
+            <p class="feature-detail-desc">Mental health and burnout support services for nurses.</p>
+          </div>
+          <div class="feature-detail-card">
+            <div class="feature-icon">⚖️</div>
+            <h3 class="feature-detail-title">Legal Rights Awareness</h3>
+            <p class="feature-detail-desc">Legal and workplace rights awareness and support.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Community Health Impact -->
+      <div class="tab-panel" id="community">
+        <div class="programme-detail-header">
+          <h2 class="programme-detail-title">Community Health Impact</h2>
+          <p class="programme-detail-desc">Leading nurse-led initiatives that improve healthcare in communities.</p>
+        </div>
+
+        <div class="programme-features-grid">
+          <div class="feature-detail-card">
+            <div class="feature-icon">🏘️</div>
+            <h3 class="feature-detail-title">Community Outreach</h3>
+            <p class="feature-detail-desc">Nurse-led community health outreach programmes.</p>
+          </div>
+          <div class="feature-detail-card">
+            <div class="feature-icon">📚</div>
+            <h3 class="feature-detail-title">Health Education</h3>
+            <p class="feature-detail-desc">Health education and screening initiatives for communities.</p>
+          </div>
+          <div class="feature-detail-card">
+            <div class="feature-icon">🤝</div>
+            <h3 class="feature-detail-title">Volunteer Coordination</h3>
+            <p class="feature-detail-desc">Volunteer coordination for underserved communities.</p>
+          </div>
+          <div class="feature-detail-card">
+            <div class="feature-icon">🤝</div>
+            <h3 class="feature-detail-title">Strategic Partnerships</h3>
+            <p class="feature-detail-desc">Partnerships with clinics, hospitals, and NGOs for broader impact.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Future Goals -->
+    <div class="future-goals">
+      <h2 class="future-title">Future Goals</h2>
+      <div class="future-grid">
+        <div class="future-item">
+          <span class="future-icon">👴</span>
+          <p>Expanded retirement support and pension advisory services for nurses</p>
+        </div>
+        <div class="future-item">
+          <span class="future-icon">🎓</span>
+          <p>Fully funded educational programmes for professional growth</p>
+        </div>
+        <div class="future-item">
+          <span class="future-icon">💻</span>
+          <p>Telemedicine support network connecting rural and urban nurses</p>
+        </div>
+        <div class="future-item">
+          <span class="future-icon">🌍</span>
+          <p>Pan-African annual summit bringing nurses from across the continent together</p>
+        </div>
+        <div class="future-item">
+          <span class="future-icon">🌱</span>
+          <p>Nurse business incubator programme providing seed funding and mentorship</p>
+        </div>
+        <div class="future-item">
+          <span class="future-icon">🏆</span>
+          <p>Provincial and continental expansion of Annual Nursing Excellence Awards</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="programs-cta">
+      <h2>Together, we're building a stronger nursing community across Africa.</h2>
+      <div class="cta-buttons">
+        <a href="#membership" class="btn-primary">Become a Member</a>
+        <a href="#membership" class="btn-outline">View All Programmes</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MEMBERSHIP -->
+<section id="membership">
+  <div class="container">
+    <!-- Section Header -->
+    <div class="membership-header">
+      <div class="section-tag">Become a Member</div>
+      <h1 class="section-hero">Join Africa's Growing Nursing Community</h1>
+      <p class="intro-text">Together, we're building a stronger, more connected nursing profession across Africa.</p>
+    </div>
+
+    <!-- Introduction -->
+    <div class="membership-intro">
+      <p class="intro-text">Whether you're a student nurse, registered nurse, nurse educator, retired professional, or healthcare partner, Nursing Connect Africa has a membership designed to support your journey.</p>
+    </div>
+
+    <!-- Membership Cards -->
+    <div class="membership-cards">
+      <!-- Basic Member -->
+      <div class="membership-card basic-card">
+        <div class="card-header">
+          <h3 class="card-title">Basic Member</h3>
+          <div class="card-price">FREE – R100/year</div>
+        </div>
+        <p class="card-subtitle">Perfect for nurses starting their journey.</p>
+        
+        <div class="card-features">
+          <div class="feature-item">
+            <span class="feature-check">✔</span>
+            <span>Community access</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-check">✔</span>
+            <span>Monthly educational sessions</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-check">✔</span>
+            <span>Networking opportunities</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-check">✔</span>
+            <span>Community updates</span>
+          </div>
+        </div>
+        
+        <div class="card-footer">
+          <a href="#register" class="btn-primary btn-full">Join Free</a>
+        </div>
+      </div>
+
+      <!-- Professional Member -->
+      <div class="membership-card professional-card featured-card">
+        <div class="popular-badge">Most Popular ⭐</div>
+        <div class="card-header">
+          <h3 class="card-title">Professional Member</h3>
+          <div class="card-price">R500 – R1,200/year</div>
+        </div>
+        
+        <div class="card-features">
+          <div class="feature-item">
+            <span class="feature-check">✔</span>
+            <span>Everything in Basic</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-check">✔</span>
+            <span>CPD & Training Discounts</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-check">✔</span>
+            <span>Job & Locum Opportunities</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-check">✔</span>
+            <span>Mentorship</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-check">✔</span>
+            <span>Career Support</span>
+          </div>
+        </div>
+        
+        <div class="card-footer">
+          <a href="#register" class="btn-primary btn-full">Become a Professional Member</a>
+        </div>
+      </div>
+
+      <!-- Leadership Member -->
+      <div class="membership-card leadership-card">
+        <div class="card-header">
+          <h3 class="card-title">Leadership Member</h3>
+          <div class="card-price">R2,500 – R5,000/year</div>
+        </div>
+        <p class="card-subtitle">For experienced leaders.</p>
+        
+        <div class="card-features">
+          <div class="feature-item">
+            <span class="feature-check">✔</span>
+            <span>Everything in Professional</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-check">✔</span>
+            <span>Leadership Programmes</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-check">✔</span>
+            <span>Speaking Opportunities</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-check">✔</span>
+            <span>Regional Leadership Roles</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-check">✔</span>
+            <span>Priority Projects</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-check">✔</span>
+            <span>Partner Exposure</span>
+          </div>
+        </div>
+        
+        <div class="card-footer">
+          <a href="#register" class="btn-primary btn-full">Apply for Leadership</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Membership Benefits -->
+    <div class="membership-benefits">
+      <h2 class="benefits-title">Why Join Nursing Connect Africa?</h2>
+      <div class="benefits-grid">
+        <div class="benefit-item">
+          <div class="benefit-icon">👥</div>
+          <span>Join a Pan-African Network</span>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon">📚</div>
+          <span>Professional Development</span>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon">🎓</div>
+          <span>CPD Opportunities</span>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon">🤝</div>
+          <span>Mentorship</span>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon">💼</div>
+          <span>Career Opportunities</span>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon">❤️</div>
+          <span>Healing Hand Network Benefits</span>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon">🌍</div>
+          <span>Community Impact</span>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon">📈</div>
+          <span>Leadership Growth</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Membership Requirements -->
+    <div class="membership-requirements">
+      <h3 class="requirements-title">Membership Requirements</h3>
+      <p class="requirements-intro">Applicants should provide:</p>
+      <div class="requirements-list">
+        <div class="requirement-item">
+          <span class="req-icon">📝</span>
+          <span>Full Name</span>
+        </div>
+        <div class="requirement-item">
+          <span class="req-icon">🌍</span>
+          <span>Country of Residence</span>
+        </div>
+        <div class="requirement-item">
+          <span class="req-icon">🎓</span>
+          <span>Nursing Qualification</span>
+        </div>
+        <div class="requirement-item">
+          <span class="req-icon">📋</span>
+          <span>Registration Body</span>
+        </div>
+        <div class="requirement-item">
+          <span class="req-icon">⏱️</span>
+          <span>Years of Experience</span>
+        </div>
+        <div class="requirement-item">
+          <span class="req-icon">📂</span>
+          <span>Membership Category</span>
+        </div>
+      </div>
+      <p class="requirements-note">This information is outlined in the company profile.</p>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="membership-cta">
+      <h2 class="cta-title">Ready to Join?</h2>
+      <p class="cta-text">Become part of a movement that empowers nurses, strengthens healthcare, and transforms communities across Africa.</p>
+      <div class="cta-buttons">
+        <a href="#register" class="btn-primary">Become a Member</a>
+        <a href="#contact" class="btn-outline">Contact Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GOVERNANCE -->
+<section id="governance">
+  <div class="container">
     <div class="text-center">
-      <div class="section-tag">Programs & Benefits</div>
-      <h2 class="section-title">What We Offer Our Members</h2>
-      <p class="section-sub">Comprehensive support for nurses at every stage of their career and life journey.</p>
+      <div class="section-tag">Governance Structure</div>
+      <h2 class="section-title">Democratic leadership and accountable governance</h2>
+      <p class="section-sub">NCA operates through elected leadership structures guided by a constitution and strong ethical oversight.</p>
     </div>
     <div class="programs-grid">
       <div class="program-card">
-        <div class="prog-icon"><span class="icon-inline" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l7 4v6c0 5.5-3.8 10.7-7 12-3.2-1.3-7-6.5-7-12V6l7-4zm0 5a2 2 0 0 0-2 2c0 1.1 2 3.5 2 3.5s2-2.4 2-3.5a2 2 0 0 0-2-2z"/></svg></span></div>
-        <h3>Funeral Cover</h3>
-        <p>Support for nurses and their immediate families during times of loss. No one should face the burden of funeral costs alone.</p>
+        <h3>Executive Board</h3>
+        <p>Provides strategic direction, policy approval, financial oversight, and organisational accountability.</p>
       </div>
       <div class="program-card">
-        <div class="prog-icon"><span class="icon-inline" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M6 4h12v4H6V4zm0 6h12v10H6V10zm5 1h2v2h-2v-2z"/></svg></span></div>
-        <h3>Disability & Illness Support</h3>
-        <p>Financial and emotional protection for nurses in case of injury or illness, ensuring security when you need it most.</p>
+        <h3>Country Chapters</h3>
+        <p>Deliver local implementation of NCA programmes, recruitment, events, and advocacy.</p>
       </div>
       <div class="program-card">
-        <div class="prog-icon"><span class="icon-inline" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 2 2 7l10 5 10-5-10-5zm0 7.5L6.5 9.5 12 12.5 17.5 9.5 12 11.5zM4 10v5c0 4 3.3 7.7 8 8 4.7-.3 8-4 8-8v-5l-8 4-8-4z"/></svg></span></div>
-        <h3>Education & Training</h3>
-        <p>Resources and scholarships for nurses to continue learning and growing professionally.</p>
-        <span class="future-badge">Future Goal</span>
+        <h3>Advisory Council</h3>
+        <p>Offers expert guidance on clinical standards, governance, legal compliance, and strategic partnerships.</p>
       </div>
       <div class="program-card">
-        <div class="prog-icon"><span class="icon-inline" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M4 4h16v2H4V4zm1 4h14v12H5V8zm4 2h6v2H9v-2z"/></svg></span></div>
-        <h3>Seminars & Social Events</h3>
-        <p>Regular workshops, debriefing sessions, and social gatherings to connect nurses and build community bonds.</p>
+        <h3>Secretariat</h3>
+        <p>Coordinates day-to-day administration, finance, communications, member services, and programme reporting.</p>
       </div>
       <div class="program-card">
-        <div class="prog-icon"><span class="icon-inline" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M5 3l2 2h10l2-2 3 2v3c0 1.1-0.9 2-2 2h-2v8H7V10H5c-1.1 0-2-0.9-2-2V5l3-2z"/></svg></span></div>
-        <h3>Community Visibility & Unity</h3>
-        <p>Shared uniforms and public presence campaigns to make nurses visible and respected in every community.</p>
-      </div>
-      <div class="program-card">
-        <div class="prog-icon"><span class="icon-inline" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M2 12l4 4 4-4 4 4 4-4-4-4-4 4-4-4-4 4z"/></svg></span></div>
-        <h3>Networking & Mentoring</h3>
-        <p>Connecting nurses across categories and experience levels to share knowledge, guidance, and career support.</p>
+        <h3>Training Arm</h3>
+        <p>Generates sustainable revenue through CPD training, workshops, and corporate wellness services.</p>
       </div>
     </div>
     <div class="future-goals">
-      <div class="star"><span class="icon-inline" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg></span></div>
       <div>
-        <h3>Our Future Goals</h3>
+        <h3>Funding Sources</h3>
         <ul>
-          <li>Expanded retirement support packages for nurses</li>
-          <li>Fully funded educational programs and professional development bursaries</li>
-          <li>National visibility campaigns for nursing communities</li>
+          <li>Membership fees across all tiers</li>
+          <li>Training programme fees and CPD revenue</li>
+          <li>Corporate and institutional grants</li>
+          <li>Sponsorships and strategic partnerships</li>
+          <li>Donations and fundraising campaigns</li>
         </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROLLOUT -->
+<section id="rollout">
+  <div class="container">
+    <!-- Section Header -->
+    <div class="rollout-header">
+      <div class="section-tag">Strategic 12-Month Rollout Plan</div>
+      <h1 class="section-hero">A Practical Roadmap for Launch and Growth</h1>
+      <p class="intro-text">The first year focuses on establishing a solid foundation, launching core programmes, building membership, and demonstrating impact.</p>
+    </div>
+
+    <!-- Quarter Cards -->
+    <div class="rollout-grid">
+      <div class="rollout-card">
+        <div class="quarter-badge">Q1</div>
+        <h3 class="quarter-title">Months 1–3</h3>
+        <div class="quarter-activities">
+          <div class="activity-item">
+            <span class="activity-check">✓</span>
+            <span>Complete NPC registration and legal compliance</span>
+          </div>
+          <div class="activity-item">
+            <span class="activity-check">✓</span>
+            <span>Establish founding committee and interim Executive Board</span>
+          </div>
+          <div class="activity-item">
+            <span class="activity-check">✓</span>
+            <span>Launch digital platforms (website, social media, WhatsApp groups)</span>
+          </div>
+          <div class="activity-item">
+            <span class="activity-check">✓</span>
+            <span>Design and produce NCA branded uniform</span>
+          </div>
+          <div class="activity-item">
+            <span class="activity-check">✓</span>
+            <span>Recruit founding members through direct outreach and social media campaigns</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="rollout-card">
+        <div class="quarter-badge">Q2</div>
+        <h3 class="quarter-title">Months 4–6</h3>
+        <div class="quarter-activities">
+          <div class="activity-item">
+            <span class="activity-check">✓</span>
+            <span>Launch first training programmes and CPD workshops</span>
+          </div>
+          <div class="activity-item">
+            <span class="activity-check">✓</span>
+            <span>Introduce paid membership tiers and payment processing</span>
+          </div>
+          <div class="activity-item">
+            <span class="activity-check">✓</span>
+            <span>Establish pilot country chapters in key provinces</span>
+          </div>
+          <div class="activity-item">
+            <span class="activity-check">✓</span>
+            <span>Begin corporate and NGO partnership development</span>
+          </div>
+          <div class="activity-item">
+            <span class="activity-check">✓</span>
+            <span>Launch Healing Hand Network funeral and disability cover</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="rollout-card">
+        <div class="quarter-badge">Q3</div>
+        <h3 class="quarter-title">Months 7–9</h3>
+        <div class="quarter-activities">
+          <div class="activity-item">
+            <span class="activity-check">✓</span>
+            <span>Host first regional virtual nursing summit</span>
+          </div>
+          <div class="activity-item">
+            <span class="activity-check">✓</span>
+            <span>Expand job and locum opportunity board</span>
+          </div>
+          <div class="activity-item">
+            <span class="activity-check">✓</span>
+            <span>Implement community health outreach programmes</span>
+          </div>
+          <div class="activity-item">
+            <span class="activity-check">✓</span>
+            <span>Grow membership base through referral incentives and campus drives</span>
+          </div>
+          <div class="activity-item">
+            <span class="activity-check">✓</span>
+            <span>Begin mentorship programme pairing senior and junior nurses</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="rollout-card">
+        <div class="quarter-badge">Q4</div>
+        <h3 class="quarter-title">Months 10–12</h3>
+        <div class="quarter-activities">
+          <div class="activity-item">
+            <span class="activity-check">✓</span>
+            <span>Host inaugural annual Nursing Connect Africa Summit</span>
+          </div>
+          <div class="activity-item">
+            <span class="activity-check">✓</span>
+            <span>Secure long-term sponsors and strategic partners</span>
+          </div>
+          <div class="activity-item">
+            <span class="activity-check">✓</span>
+            <span>Publish first annual impact report</span>
+          </div>
+          <div class="activity-item">
+            <span class="activity-check">✓</span>
+            <span>Evaluate programme outcomes and membership satisfaction</span>
+          </div>
+          <div class="activity-item">
+            <span class="activity-check">✓</span>
+            <span>Plan Year 2 expansion including additional country chapters</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Expected Impact -->
+    <div class="expected-impact">
+      <h2 class="impact-title">Expected Year 1 Impact</h2>
+      <div class="impact-grid">
+        <div class="impact-item">
+          <span class="impact-icon">📚</span>
+          <p>Improved nurse competence and confidence through accessible training</p>
+        </div>
+        <div class="impact-item">
+          <span class="impact-icon">💼</span>
+          <p>Increased employment and income-generating opportunities for members</p>
+        </div>
+        <div class="impact-item">
+          <span class="impact-icon">🤝</span>
+          <p>Stronger professional nurse identity and solidarity across the network</p>
+        </div>
+        <div class="impact-item">
+          <span class="impact-icon">🏥</span>
+          <p>Improved access to quality healthcare in underserved communities</p>
+        </div>
+        <div class="impact-item">
+          <span class="impact-icon">📊</span>
+          <p>Sustainable nurse-led healthcare initiatives with measurable outcomes</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERSHIPS -->
+<section id="partnerships">
+  <div class="container">
+    <!-- Section Header -->
+    <div class="partnerships-header">
+      <div class="section-tag">Our Partners & Sponsors</div>
+      <h1 class="section-hero">Partners in Transforming Healthcare</h1>
+      <p class="intro-text">Together, we create lasting impact across Africa.</p>
+    </div>
+
+    <!-- Introduction -->
+    <div class="partnerships-intro">
+      <p class="intro-text">Nursing Connect Africa collaborates with healthcare organisations, educational institutions, corporate partners, NGOs, and government agencies to strengthen the nursing profession and improve healthcare outcomes across Africa.</p>
+    </div>
+
+    <!-- Who We Partner With -->
+    <div class="partner-types">
+      <h2 class="section-subtitle">Who We Partner With</h2>
+      <div class="partner-cards">
+        <div class="partner-card">
+          <div class="partner-icon">🏥</div>
+          <h3 class="partner-title">Healthcare Institutions</h3>
+          <div class="partner-list">
+            <span>Hospitals</span>
+            <span>Clinics</span>
+            <span>Healthcare Suppliers</span>
+          </div>
+        </div>
+        <div class="partner-card">
+          <div class="partner-icon">🎓</div>
+          <h3 class="partner-title">Academic Institutions</h3>
+          <div class="partner-list">
+            <span>Universities</span>
+            <span>Nursing Colleges</span>
+            <span>Training Providers</span>
+          </div>
+        </div>
+        <div class="partner-card">
+          <div class="partner-icon">🤝</div>
+          <h3 class="partner-title">NGOs & Non-Profits</h3>
+          <div class="partner-list">
+            <span>Community Health Organisations</span>
+            <span>Development Partners</span>
+          </div>
+        </div>
+        <div class="partner-card">
+          <div class="partner-icon">🏢</div>
+          <h3 class="partner-title">Corporate Partners</h3>
+          <div class="partner-list">
+            <span>Corporate Sponsors</span>
+            <span>Financial Services</span>
+            <span>Pharmaceutical Companies</span>
+          </div>
+        </div>
+        <div class="partner-card">
+          <div class="partner-icon">🏛️</div>
+          <h3 class="partner-title">Government</h3>
+          <div class="partner-list">
+            <span>Department of Health</span>
+            <span>Provincial Health Departments</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Why Partner With Us -->
+    <div class="why-partner">
+      <h2 class="section-subtitle">Why Partner With Nursing Connect Africa?</h2>
+      <div class="why-partner-grid">
+        <div class="why-item">
+          <div class="why-icon">🌍</div>
+          <h3 class="why-title">Community Impact</h3>
+          <p class="why-desc">Support initiatives that improve healthcare and empower nurses across Africa.</p>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">📣</div>
+          <h3 class="why-title">Brand Visibility</h3>
+          <p class="why-desc">Gain visibility through events, training programmes, digital platforms, and national campaigns.</p>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">👩‍⚕️</div>
+          <h3 class="why-title">Access to Professionals</h3>
+          <p class="why-desc">Connect with a growing network of skilled nursing professionals.</p>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">🤝</div>
+          <h3 class="why-title">Shared Purpose</h3>
+          <p class="why-desc">Help build a stronger, more resilient healthcare system through meaningful collaboration.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sponsorship Opportunities -->
+    <div class="sponsorship-opportunities">
+      <h2 class="section-subtitle">Sponsorship Opportunities</h2>
+      <div class="sponsorship-grid">
+        <div class="sponsorship-item">
+          <span class="sponsor-icon">🎓</span>
+          <span>Sponsor Training & CPD Programmes</span>
+        </div>
+        <div class="sponsorship-item">
+          <span class="sponsor-icon">🏆</span>
+          <span>Sponsor the Annual Nursing Summit</span>
+        </div>
+        <div class="sponsorship-item">
+          <span class="sponsor-icon">❤️</span>
+          <span>Support Community Health Outreach</span>
+        </div>
+        <div class="sponsorship-item">
+          <span class="sponsor-icon">👕</span>
+          <span>Sponsor Member Uniforms</span>
+        </div>
+        <div class="sponsorship-item">
+          <span class="sponsor-icon">🌱</span>
+          <span>Invest in Future Nursing Leaders</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Partner Logos Placeholder -->
+    <div class="partner-logos-section">
+      <h2 class="logos-title">We Welcome Strategic Partnerships</h2>
+      <p class="logos-subtitle">Our growing network of partners who are transforming healthcare across Africa</p>
+      <div class="partner-logos-grid">
+        <div class="logo-placeholder">
+          <div class="placeholder-text">Partner Logo</div>
+        </div>
+        <div class="logo-placeholder">
+          <div class="placeholder-text">Partner Logo</div>
+        </div>
+        <div class="logo-placeholder">
+          <div class="placeholder-text">Partner Logo</div>
+        </div>
+        <div class="logo-placeholder">
+          <div class="placeholder-text">Partner Logo</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="partnerships-cta">
+      <h2 class="cta-title">Let's Build the Future of Nursing Together</h2>
+      <p class="cta-text">Whether you're a corporate organisation, NGO, academic institution, or government partner, we'd love to collaborate with you.</p>
+      <div class="cta-buttons">
+        <a href="#contact" class="btn-primary">Become a Partner</a>
+        <a href="#contact" class="btn-outline">Contact Us</a>
       </div>
     </div>
   </div>
@@ -141,29 +1109,57 @@
 <!-- GET INVOLVED -->
 <section id="get-involved">
   <div class="container">
-    <div class="text-center">
+    <!-- Section Header -->
+    <div class="get-involved-header">
       <div class="section-tag">Get Involved</div>
-      <h2 class="section-title">Ways to Make a Difference</h2>
-      <p class="section-sub">Whether you're a nurse, supporter, or organisation — there's a place for you in this network.</p>
+      <h1 class="section-hero">Nursing Connect Africa is More Than an Organisation — It's a Movement</h1>
+      <p class="intro-text">Whether you are a nurse seeking support, a professional looking to grow, or a partner wanting to make a difference, there is a place for you.</p>
     </div>
-    <div class="involved-grid">
-      <div class="involved-card">
-        <div class="inv-icon"><span class="icon-inline" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M8 2h8v2H8V2zm2 4a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm-3 6v6h14v-6c0-3-2.5-5.5-5.5-5.9V7a2.5 2.5 0 0 0-5 0v-.9C7.5 6.5 5 8.9 5 12z"/></svg></span></div>
-        <h3>Become a Member</h3>
-        <p>Join a united network of nurses from every category. Access support, events, cover, and a community that has your back.</p>
-        <a href="#register" class="btn-teal">Register Now →</a>
+
+    <!-- Ways to Participate -->
+    <div class="ways-to-participate">
+      <div class="participate-card">
+        <div class="participate-icon">👥</div>
+        <h3 class="participate-title">Become a Member</h3>
+        <p class="participate-desc">Join a united network of nurses across Africa. Choose the membership tier that fits your career stage and start accessing benefits immediately.</p>
+        <a href="#membership" class="btn-primary btn-full">Join Now</a>
       </div>
-      <div class="involved-card">
-        <div class="inv-icon"><span class="icon-inline" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l6 6v10h-4v-6H10v6H6V8l6-6zm0 8l-2 2h4l-2-2z"/></svg></span></div>
-        <h3>Volunteer</h3>
-        <p>Help organise events, seminars, and community initiatives. Your time and skills can uplift the entire nursing community.</p>
-        <a href="#contact" class="btn-teal-outline">Get in Touch →</a>
+
+      <div class="participate-card">
+        <div class="participate-icon">🤝</div>
+        <h3 class="participate-title">Volunteer</h3>
+        <p class="participate-desc">Help organise events, seminars, community outreach, and administrative support. Your time and skills make NCA stronger.</p>
+        <a href="#contact" class="btn-primary btn-full">Volunteer</a>
       </div>
-      <div class="involved-card">
-        <div class="inv-icon"><span class="icon-inline" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 21s-8-4.5-8-11.5S7 3 12 8.5 20 3 20 9.5 12 21 12 21z"/></svg></span></div>
-        <h3>Sponsor a Program</h3>
-        <p>Contribute to education, seminars, and support services. Help fund the programs that keep nurses supported and strong.</p>
-        <a href="#contact" class="btn-teal-outline">Learn More →</a>
+
+      <div class="participate-card">
+        <div class="participate-icon">💰</div>
+        <h3 class="participate-title">Sponsor a Programme or Nurse</h3>
+        <p class="participate-desc">Contribute to education, training, seminars, and support services. Every sponsorship directly empowers a nurse and their community.</p>
+        <a href="#partnerships" class="btn-primary btn-full">Sponsor</a>
+      </div>
+
+      <div class="participate-card">
+        <div class="participate-icon">📢</div>
+        <h3 class="participate-title">Refer a Colleague</h3>
+        <p class="participate-desc">Know a nurse who needs support or wants to grow? Invite them to join the network. Our community is only as strong as the nurses in it.</p>
+        <a href="#contact" class="btn-primary btn-full">Refer</a>
+      </div>
+
+      <div class="participate-card">
+        <div class="participate-icon">🏢</div>
+        <h3 class="participate-title">Partner With Us</h3>
+        <p class="participate-desc">Organisations, corporates, and institutions can partner with NCA for mutual benefit, impact, and visibility.</p>
+        <a href="#partnerships" class="btn-primary btn-full">Partner</a>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="get-involved-cta">
+      <h2 class="cta-title">Unite with Us — Let's Care for Those Who Care for Others</h2>
+      <div class="cta-buttons">
+        <a href="#register" class="btn-primary">Become a Member</a>
+        <a href="#contact" class="btn-outline">Contact Us</a>
       </div>
     </div>
   </div>
@@ -172,7 +1168,7 @@
 <!-- CTA BANNER -->
 <div class="cta-banner fade-in visible">
   <h2>Unite with Us</h2>
-  <p>Let's care for those who care for others.</p>
+  <p>Let’s care for those who care for others.</p>
   <div class="cta-btns">
     <a href="#register" class="btn-white">✦ Join the Network Today</a>
     <a href="https://wa.me/27813501923" class="btn-white" target="_blank" rel="noreferrer noopener">💬 WhatsApp Us</a>
@@ -183,19 +1179,18 @@
 <section id="register">
   <div class="container">
     <div class="section-tag">Membership</div>
-    <h2 class="section-title" style="margin-bottom:0.5rem;">Join Healing Hand Network</h2>
+    <h2 class="section-title" style="margin-bottom:0.5rem;">Join Nursing Connect Africa</h2>
     <p style="color:var(--text-muted);font-size:0.92rem;margin-bottom:2.5rem;">Complete the form below to register as a member. All nurses from every category are welcome.</p>
     <div class="register-grid">
       <div class="register-info">
         <div class="purpose-card">
           <h4><span class="icon-inline" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 4.5a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11zm0 2.5a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/></svg></span>Membership Purpose</h4>
           <ul>
-            <li>Professional support &amp; unity</li>
-            <li>Emotional debriefing &amp; wellness</li>
-            <li>Seminars &amp; workshops</li>
-            <li>Funeral &amp; social support</li>
-            <li>Retirement &amp; disability support (future)</li>
-            <li>Skills development &amp; education support (future)</li>
+            <li>Professional support & unity</li>
+            <li>Emotional debriefing & wellness</li>
+            <li>Seminars & workshops</li>
+            <li>Funeral & social support</li>
+            <li>Skills development & education support</li>
           </ul>
         </div>
         <div class="payment-card">
@@ -204,7 +1199,7 @@
           <div class="payment-row"><span>Account Name</span><span>Healing Hand Network</span></div>
           <div class="payment-row"><span>Account Type</span><span>Business Account</span></div>
           <div class="payment-row"><span>Account Number</span><span>631 916 66959</span></div>
-          <div class="payment-row"><span>Reference</span><span>Your Full Name &amp; Surname</span></div>
+          <div class="payment-row"><span>Reference</span><span>Your Full Name & Surname</span></div>
           <div class="payment-note"><span class="icon-inline" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg></span>Always use your full name and surname as the reference to ensure correct allocation of payments.</div>
         </div>
         <div class="proof-card">
@@ -219,7 +1214,7 @@
           <div class="form-section-label">Personal Details</div>
           <div class="form-row">
             <div class="form-group">
-              <label for="fullName">Full Name &amp; Surname *</label>
+              <label for="fullName">Full Name & Surname *</label>
               <input id="fullName" type="text" placeholder="Jane Doe" required />
             </div>
             <div class="form-group">
@@ -230,7 +1225,7 @@
           <div class="form-row">
             <div class="form-group">
               <label for="dob">Date of Birth *</label>
-              <input id="dob" type="date" placeholder="YYYY-MM-DD" required />
+              <input id="dob" type="date" required />
             </div>
             <div class="form-group">
               <label for="gender">Gender</label>
@@ -297,17 +1292,17 @@
           </div>
           <div class="form-section-label">Membership Purpose (Select all that apply)</div>
           <div class="checkbox-group">
-            <label class="checkbox-item"><input type="checkbox" /> Professional support &amp; unity</label>
-            <label class="checkbox-item"><input type="checkbox" /> Emotional debriefing &amp; wellness</label>
-            <label class="checkbox-item"><input type="checkbox" /> Seminars &amp; workshops</label>
-            <label class="checkbox-item"><input type="checkbox" /> Funeral &amp; social support</label>
-            <label class="checkbox-item"><input type="checkbox" /> Retirement &amp; disability support (future goal)</label>
-            <label class="checkbox-item"><input type="checkbox" /> Skills development &amp; education support (future goal)</label>
+            <label class="checkbox-item"><input type="checkbox" /> Professional support & unity</label>
+            <label class="checkbox-item"><input type="checkbox" /> Emotional debriefing & wellness</label>
+            <label class="checkbox-item"><input type="checkbox" /> Seminars & workshops</label>
+            <label class="checkbox-item"><input type="checkbox" /> Funeral & social support</label>
+            <label class="checkbox-item"><input type="checkbox" /> Retirement & disability support</label>
+            <label class="checkbox-item"><input type="checkbox" /> Skills development & education support</label>
           </div>
           <div class="form-section-label">Declaration</div>
           <label class="declaration-check">
             <input type="checkbox" required />
-            I declare that the information provided is true and correct. I understand that Healing Hand Network is a non-profit organisation aimed at supporting nurses socially, emotionally, and professionally. *
+            I declare that the information provided is true and correct. I understand that Nursing Connect Africa is a non-profit organisation aimed at supporting nurses socially, emotionally, and professionally. *
           </label>
           <button type="submit" class="btn-submit">Submit Registration →</button>
           <p class="form-footer">After submitting, send proof of payment to <a href="https://wa.me/27813501923" target="_blank" rel="noreferrer noopener">WhatsApp +27 81 350 1923</a></p>
@@ -323,23 +1318,23 @@
     <div class="text-center">
       <div class="section-tag">Contact Us</div>
       <h2 class="section-title">Get in Touch</h2>
-      <p class="section-sub">We'd love to hear from you. Reach out with any questions, to volunteer, or to sponsor a program.</p>
+      <p class="section-sub">We would love to hear from you. Reach out with questions, volunteering ideas, or partnership proposals.</p>
     </div>
     <div class="contact-grid">
       <div class="contact-card">
         <div class="contact-icon email"><span class="icon-inline" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M4 5h16v14H4V5zm2 2v10h12V7H6zm6 4L6 8h12l-6 3z"/></svg></span></div>
         <h3>Email Us</h3>
-        <p>For enquiries and membership information, reach out via email.</p>
+        <p>info@nursingconnectafrica.org</p>
       </div>
       <div class="contact-card">
         <div class="contact-icon whatsapp"><span class="icon-inline" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M16.5 3h-9C5.6 3 4 4.6 4 6.5v11C4 19.4 5.6 21 7.5 21H8v3l3.5-3h5c1.9 0 3.5-1.6 3.5-3.5v-11C20 4.6 18.4 3 16.5 3zm-7 12.5c-1.4 0-2.5-1.1-2.5-2.5S8.1 10.5 9.5 10.5 12 11.6 12 13s-1.1 2.5-2.5 2.5zm4-5.5H9V7h4.5v3.5z"/></svg></span></div>
         <h3>WhatsApp</h3>
-        <p>Admin WhatsApp for proof of payment and general queries:<br><a href="https://wa.me/27813501923" target="_blank" rel="noreferrer noopener">+27 81 350 1923</a></p>
+        <p><a href="https://wa.me/27813501923" target="_blank" rel="noreferrer noopener">+27 81 350 1923</a></p>
       </div>
       <div class="contact-card">
         <div class="contact-icon social"><span class="icon-inline" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M7 2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm5 18c.6 0 1-.4 1-1s-.4-1-1-1-1 .4-1 1 .4 1 1 1zm3-3V6H9v11h6z"/></svg></span></div>
         <h3>Social Media</h3>
-        <p>Follow us and stay connected with the nursing community. Updates, events, and more.</p>
+        <p>@NursingConnectAfrica</p>
       </div>
     </div>
   </div>
@@ -350,17 +1345,17 @@
   <div class="footer-inner">
     <div class="footer-top">
       <div class="footer-brand">
-        <img alt="Healing Hand Network" src="Images/Logo.jpeg" />
-        <p>Healing Hand Network is a registered non-profit company dedicated to uniting, supporting, and empowering nurses across all categories and age groups.</p>
-        <div class="footer-ent">Enterprise No. 2026/021363 · NPC</div>
+        <img alt="Nursing Connect Africa" src="Images/Logo.jpeg" />
+        <p>Nursing Connect Africa (NPC) is a pan-African professional movement dedicated to uniting, supporting, and empowering nurses across the continent.</p>
+        <div class="footer-ent">Non-Profit Company (NPC) · Enterprise No. 2026/021363</div>
       </div>
       <div class="footer-col">
         <h4>Quick Links</h4>
         <ul class="footer-links">
-          <li><a href="#about">About Us</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#vision">Vision</a></li>
           <li><a href="#programs">Programs</a></li>
-          <li><a href="#involved">Get Involved</a></li>
-          <li><a href="#register">Register</a></li>
+          <li><a href="#membership">Membership</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
@@ -369,20 +1364,47 @@
         <ul class="footer-links">
           <li><a href="https://wa.me/27813501923" target="_blank" rel="noreferrer noopener">WhatsApp Us</a></li>
           <li><a href="#register">Become a Member</a></li>
-          <li><a href="#involved">Donate</a></li>
-          <li><a href="#involved">Volunteer</a></li>
+          <li><a href="#partnerships">Partner With Us</a></li>
+          <li><a href="#register">Volunteer</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2025 Healing Hand Network. All rights reserved. · Non-Profit Company (NPC)</p>
-
+      <p>© 2025 Nursing Connect Africa. All rights reserved. · Non-Profit Company (NPC)</p>
     </div>
   </div>
 </footer>
 
 <!-- TOAST -->
 <div class="toast" id="toast">✅ Registration submitted! Please send proof of payment via WhatsApp.</div>
+
+<script>
+// Programme Tab Switching
+document.addEventListener('DOMContentLoaded', function() {
+  const tabBtns = document.querySelectorAll('.tab-btn');
+  const tabPanels = document.querySelectorAll('.tab-panel');
+
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      // Remove active class from all buttons
+      tabBtns.forEach(b => b.classList.remove('active'));
+      // Add active class to clicked button
+      this.classList.add('active');
+
+      // Get the tab ID
+      const tabId = this.getAttribute('data-tab');
+
+      // Hide all panels
+      tabPanels.forEach(panel => {
+        panel.classList.remove('active');
+      });
+
+      // Show the selected panel
+      document.getElementById(tabId).classList.add('active');
+    });
+  });
+});
+</script>
 
 <script src="script.js"></script>
 </body>
