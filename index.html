@@ -21,7 +21,7 @@
     <ul class="nav-links">
       <li><a href="#home">Home</a></li>
       <li class="dropdown-item">
-        <a href="#about" class="dropdown-toggle">About <span class="dropdown-arrow">▼</span></a>
+        <button class="dropdown-toggle">About <span class="dropdown-arrow">▼</span></button>
         <div class="dropdown-menu">
           <a href="#about" class="dropdown-link">About Us</a>
           <a href="#vision" class="dropdown-link">Vision & Mission</a>
@@ -30,7 +30,7 @@
         </div>
       </li>
       <li class="dropdown-item">
-        <a href="#programs" class="dropdown-toggle">Programmes <span class="dropdown-arrow">▼</span></a>
+        <button class="dropdown-toggle">Programmes <span class="dropdown-arrow">▼</span></button>
         <div class="dropdown-menu">
           <a href="#programs" class="dropdown-link">Healing Hand Network</a>
           <a href="#programs" class="dropdown-link">Professional Development</a>
@@ -40,7 +40,7 @@
       </li>
       <li><a href="#membership">Membership</a></li>
       <li class="dropdown-item">
-        <a href="#get-involved" class="dropdown-toggle">Get Involved <span class="dropdown-arrow">▼</span></a>
+        <button class="dropdown-toggle">Get Involved <span class="dropdown-arrow">▼</span></button>
         <div class="dropdown-menu">
           <a href="#partnerships" class="dropdown-link">Partners</a>
           <a href="#get-involved" class="dropdown-link">Volunteer</a>
@@ -59,29 +59,29 @@
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#home" onclick="toggleMenu()">Home</a>
-  <a href="#about" class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(event)">About ▼</a>
+  <a href="#home">Home</a>
+  <a href="#about" class="mobile-dropdown-toggle">About ▼</a>
   <div class="mobile-dropdown-menu" id="mobileDropdown">
-    <a href="#about" onclick="toggleMenu()" class="mobile-dropdown-link">About Us</a>
-    <a href="#vision" onclick="toggleMenu()" class="mobile-dropdown-link">Vision & Mission</a>
-    <a href="#governance" onclick="toggleMenu()" class="mobile-dropdown-link">Governance</a>
-    <a href="#rollout" onclick="toggleMenu()" class="mobile-dropdown-link">Rollout Plan</a>
+    <a href="#about" class="mobile-dropdown-link">About Us</a>
+    <a href="#vision" class="mobile-dropdown-link">Vision & Mission</a>
+    <a href="#governance" class="mobile-dropdown-link">Governance</a>
+    <a href="#rollout" class="mobile-dropdown-link">Rollout Plan</a>
   </div>
-  <a href="#programs" class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(event)">Programmes ▼</a>
+  <a href="#programs" class="mobile-dropdown-toggle">Programmes ▼</a>
   <div class="mobile-dropdown-menu" id="mobileDropdown2">
-    <a href="#programs" onclick="toggleMenu()" class="mobile-dropdown-link">Healing Hand Network</a>
-    <a href="#programs" onclick="toggleMenu()" class="mobile-dropdown-link">Professional Development</a>
-    <a href="#programs" onclick="toggleMenu()" class="mobile-dropdown-link">Advocacy & Welfare</a>
-    <a href="#programs" onclick="toggleMenu()" class="mobile-dropdown-link">Community Health Impact</a>
+    <a href="#programs" class="mobile-dropdown-link">Healing Hand Network</a>
+    <a href="#programs" class="mobile-dropdown-link">Professional Development</a>
+    <a href="#programs" class="mobile-dropdown-link">Advocacy & Welfare</a>
+    <a href="#programs" class="mobile-dropdown-link">Community Health Impact</a>
   </div>
-  <a href="#membership" onclick="toggleMenu()">Membership</a>
-  <a href="#get-involved" class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(event)">Get Involved ▼</a>
+  <a href="#membership">Membership</a>
+  <a href="#get-involved" class="mobile-dropdown-toggle">Get Involved ▼</a>
   <div class="mobile-dropdown-menu" id="mobileDropdown3">
-    <a href="#partnerships" onclick="toggleMenu()" class="mobile-dropdown-link">Partners</a>
-    <a href="#get-involved" onclick="toggleMenu()" class="mobile-dropdown-link">Volunteer</a>
+    <a href="#partnerships" class="mobile-dropdown-link">Partners</a>
+    <a href="#get-involved" class="mobile-dropdown-link">Volunteer</a>
   </div>
-  <a href="#contact" onclick="toggleMenu()">Contact</a>
-  <a href="#register" class="mobile-cta-btn" onclick="toggleMenu()">Join</a>
+  <a href="#contact">Contact</a>
+  <a href="#register" class="mobile-cta-btn">Join</a>
 </div>
 
 <!-- HERO -->
@@ -1195,16 +1195,16 @@
         </div>
         <div class="payment-card">
           <h4><span class="icon-inline" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M4 5h16v3H4V5zm0 5h16v9H4v-9zm2 2v5h12v-5H6z"/></svg></span>Payment Details</h4>
-          <div class="payment-row"><span>Bank</span><span>First National Bank (FNB)</span></div>
+          <div class="payment-row"><span>Bank</span><span>Capitec Bank </span></div>
           <div class="payment-row"><span>Account Name</span><span>Healing Hand Network</span></div>
           <div class="payment-row"><span>Account Type</span><span>Business Account</span></div>
-          <div class="payment-row"><span>Account Number</span><span>631 916 66959</span></div>
+          <div class="payment-row"><span>Account Number</span><span>2568412050</span></div>
           <div class="payment-row"><span>Reference</span><span>Your Full Name & Surname</span></div>
           <div class="payment-note"><span class="icon-inline" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg></span>Always use your full name and surname as the reference to ensure correct allocation of payments.</div>
         </div>
         <div class="proof-card">
           <h4><span class="icon-inline" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M4 18h16v2H4v-2zm8-16L4 9h4v7h8V9h4L12 2z"/></svg></span>Proof of Payment</h4>
-          <p>Send via WhatsApp: <a href="https://wa.me/27813501923" target="_blank" rel="noreferrer noopener">+27 81 350 1923</a></p>
+          <p>Send via WhatsApp: <a href="https://wa.me/27813501923" target="_blank" rel="noreferrer noopener">+27 79 918 0327</a></p>
         </div>
       </div>
       <div class="reg-form-card">
