@@ -233,6 +233,54 @@ function toggleMenu() {
       }
     });
 
+    // Scroll spy - highlight active section in navbar
+    function handleScrollSpy() {
+      const sections = document.querySelectorAll('section[id]');
+      const scrollPosition = window.scrollY + 100; // Offset for navbar height
+
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        const sectionId = section.getAttribute('id');
+
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+          // Remove active class from all links and dropdown toggles
+          document.querySelectorAll('.nav-links a, .mobile-menu a, .dropdown-toggle, .mobile-dropdown-toggle').forEach(link => {
+            link.classList.remove('active');
+          });
+
+          // Add active class to corresponding links
+          document.querySelectorAll(`.nav-links a[href="#${sectionId}"], .mobile-menu a[href="#${sectionId}"]`).forEach(link => {
+            link.classList.add('active');
+          });
+
+          // Highlight parent dropdown toggles based on section
+          const sectionToggleMap = {
+            'about': 'About',
+            'vision': 'About',
+            'governance': 'About',
+            'rollout': 'About',
+            'programs': 'Programmes',
+            'partnerships': 'Get Involved',
+            'get-involved': 'Get Involved'
+          };
+
+          const parentToggle = sectionToggleMap[sectionId];
+          if (parentToggle) {
+            document.querySelectorAll('.dropdown-toggle, .mobile-dropdown-toggle').forEach(toggle => {
+              if (toggle.textContent.includes(parentToggle)) {
+                toggle.classList.add('active');
+              }
+            });
+          }
+        }
+      });
+    }
+
+    // Add scroll event listener for scroll spy
+    window.addEventListener('scroll', handleScrollSpy);
+
     // Initial navbar state
     handleNavbarScroll();
+    handleScrollSpy();
   });
